@@ -2,11 +2,9 @@ package no.hvl.dat100.tabeller;
 
 public class Tabeller {
 
-	// a)
+	// a) Ferdig
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
-		//throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
         System.out.print("[");
         for(int i = 0; i < tabell.length; i++){
             if(i == tabell.length-1) {
@@ -17,15 +15,27 @@ public class Tabeller {
 
 	}
 
-	// b)
-	public static String tilStreng(int[] tabell) {
+	// b) Ferdig
 
-		// TODO
+	public static String tilStreng(int[] tabell) {
+        System.out.print("[");
+        String tabellRetur = "";
+        for (int i = 0; i<tabell.length; i++){
+            if (i < tabell.length-1) {
+                tabellRetur = (tabellRetur + tabell[i] + ", ");
+            }
+                else {
+                tabellRetur = (tabellRetur + tabell[i] + "]");
+                }
+            System.out.println();
+        }
 		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
 	}
 
 	// c)
 	public static int summer(int[] tabell) {
+
+
 
 		// TODO
 		throw new UnsupportedOperationException("Metoden summer ikke implementert");
