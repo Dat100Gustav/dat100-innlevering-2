@@ -2,52 +2,50 @@ package no.hvl.dat100.tabeller;
 
 public class Tabeller {
 
-	// a) Ferdig
-	public static void skrivUt(int[] tabell) {
+    // a) Ferdig
+    public static void skrivUt(int[] tabell) {
 
         System.out.print("[");
-        for(int i = 0; i < tabell.length; i++){
-            if(i == tabell.length-1) {
+        for (int i = 0; i < tabell.length; i++) {
+            if (i == tabell.length - 1) {
                 System.out.print(tabell[i]);
-            }else System.out.print(tabell[i] + ", ");
+            } else System.out.print(tabell[i] + ", ");
         }
         System.out.println("]");
 
-	}
+    }
 
-	// b) Ferdig
+    // b) Ferdig
 
-	public static String tilStreng(int[] tabell) {
+    public static String tilStreng(int[] tabell) {
 
         String tabellRetur = "[";
         for (int i = 0; i < tabell.length; i++) {
 
-            if (i == tabell.length-1) {
-            tabellRetur += (tabell[i]);
-            }
-
-            else {
+            if (i == tabell.length - 1) {
+                tabellRetur += (tabell[i]);
+            } else {
                 tabellRetur += (tabell[i] + ",");
             }
         }
         tabellRetur += "]";
         return tabellRetur;
 
-	}
+    }
 
-	// c)
-	public static int summer(int[] tabell) {
+    // c)
+    public static int summer(int[] tabell) {
 
         int sum = 0;
-        for (int i = 0; i <tabell.length; i++) {
+        for (int i = 0; i < tabell.length; i++) {
             sum += tabell[i];
         }
         return sum;
 
-	}
+    }
 
-	// d)
-	public static boolean finnesTall(int[] tabell, int tall) {
+    // d)
+    public static boolean finnesTall(int[] tabell, int tall) {
 
         boolean finnes = false;
         for (int i = 0; i < tabell.length; i++) {
@@ -57,12 +55,12 @@ public class Tabeller {
         }
         return finnes;
     }
-        //som gitt en tabell og et tall returnerer true
-        // om tabellen tabell innholder tallet tall og false ellers.
+    //som gitt en tabell og et tall returnerer true
+    // om tabellen tabell innholder tallet tall og false ellers.
 
 
-	// e)
-	public static int posisjonTall(int[] tabell, int tall) {
+    // e)
+    public static int posisjonTall(int[] tabell, int tall) {
 
         int finnes = -1;
 
@@ -76,33 +74,47 @@ public class Tabeller {
     }
 
 
-	// f)
-	public static int[] reverser(int[] tabell) {
+    // f)
+    public static int[] reverser(int[] tabell) {
 
-        int [] nyTabell = new int [tabell.length];
-        int temp = tabell.length-1;
+        int[] nyTabell = new int[tabell.length];
+        int temp = tabell.length - 1;
         for (int i = 0; i < tabell.length; i++) {
             nyTabell[temp] = tabell[i];
             temp -= 1;
 
-            }
+        }
         return nyTabell;
+    }
+
+
+    // g)
+    public static boolean erSortert(int[] tabell) {
+
+        boolean sortert = true;
+
+        for (int i = 1; i < tabell.length; i++) {
+            if (tabell[i] > tabell[i - 1]) {
+            } else {
+                sortert = false;
+            }
+        }
+        return sortert;
+    }
+
+    // h)
+    public static int[] settSammen(int[] tabell1, int[] tabell2) {
+
+        int[] tabell3 = new int[tabell1.length + tabell2.length];
+
+        for (int i = 0; i < tabell1.length; i++) {
+            tabell3[i] = tabell1[i];
+        }
+        for (int i = 0; i < tabell2.length; i++) {
+            tabell3[tabell1.length + i] = tabell2[i];
+        }
+        return tabell3;
         }
 
+    }
 
-
-	// g)
-	public static boolean erSortert(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
-	}
-
-	// h)
-	public static int[] settSammen(int[] tabell1, int[] tabell2) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
-
-	}
-}
